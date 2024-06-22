@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-// Define the schema for trade operations using Zod
+// Define the schema for trade operations
 export const tradeSchema = z.object({
   userId: z.number().int().positive(), // The user ID must be a positive integer
   symbol: z.string().nonempty(), // The stock symbol must be a non-empty string
