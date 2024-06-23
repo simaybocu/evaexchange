@@ -2,54 +2,17 @@
 
 The purpose of the application is to educate users on the terminology used in trading of shares.
 
-## Available Scripts
+## Start for Docker
 
-For development purposes, you can use the following npm scripts:
-** The `npm run` command must be in front before running the commands. Ex: `npm run dev`
-** For local use, change .env.example to .env and define the values correctly.
+The following 3 commands are enough to run Docker:
 
-### `build`
+1. `npm run dc:dev:up`
+2. `docker exec -it evaexchange npm run db:mig:deploy`
+3. `docker exec -it evaexchange npm run db:seed`
 
-Builds the project for production. It first cleans the `dist/` folder, then compiles TypeScript code to JavaScript using `tsc`. It also runs the `copyAssets` script using `ts-node` and `tsconfig-paths`.
+## Installation for Development
 
-### `start`
-
-Runs the compiled production code.
-
-### `db:mig:init`
-
-Initializes database migration and saves it with a name `init`.
-
-
-### `db:mig:deploy`
-
-Deploys database migration.
-
-### `db:mig:reset`
-
-Resets the database and rolls back all database migrations.
-
-### `db:gen`
-
-Regenerates Prisma models and CRUD operations.
-
-### `db:push`
-
-Pushes the database schema and migrations to the database.
-
-### `db:seed`
-
-Runs a script to seed the database with sample data.
-
-### `lint`
-
-Lints all TypeScript files using `eslint`.
-
-### `lint:fix`
-
-Automatically fixes `eslint` errors in all TypeScript files.
-
-## Installation and Setup
+Duplicate .env.example and edit it to .env
 
 ### `npm i`
 
@@ -72,6 +35,40 @@ Runs database seeding.
 Starts the server in development mode with hot reloading.
 
 
-## Start for Docker
+## Available Scripts
 
-`npm run dc:dev:up`
+For development purposes, you can use the following npm scripts:
+** The `npm run` command must be in front before running the commands. Ex: `npm run dev`
+** For local use, change .env.example to .env and define the values correctly.
+
+### `build`
+
+Builds the project for production. It first cleans the `dist/` folder, then compiles TypeScript code to JavaScript using `tsc`.
+
+### `start`
+
+Runs the compiled production code.
+
+### `db:mig:init`
+
+Initializes database migration and saves it with a name `init`.
+
+### `db:mig:deploy`
+
+Deploys database migration.
+
+### `db:mig:reset`
+
+Resets the database and rolls back all database migrations.
+
+### `db:gen`
+
+Regenerates Prisma models and CRUD operations.
+
+### `db:push`
+
+Pushes the database schema and migrations to the database.
+
+### `db:seed`
+
+Runs a script to seed the database with sample data.

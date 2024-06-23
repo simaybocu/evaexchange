@@ -19,7 +19,6 @@ export const buyShares = async (userId: number, symbol: string, quantity: number
     if (!portfolio) throw new Error(ERROR_MESSAGES.PORTFOLIO_NOT_FOUND);
 
     logger.debug(`Creating new share: userId=${userId}, symbol=${symbol}, quantity=${quantity}`);
-   // const newShare = new Share(0, symbol, share.price, portfolio.id, quantity);
     const newShare = new Share(symbol, share.price, portfolio.id, quantity);
     const createdShare = await tradeRepository.createShare(newShare);
     // Check if share creation was successful
