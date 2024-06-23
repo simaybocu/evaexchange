@@ -28,7 +28,6 @@ export const buyShares = async (userId: number, symbol: string, quantity: number
     return { message: SUCCESS_MESSAGES.SHARES_BOUGHT_SUCCESS };
   } catch (error) {
     if (error instanceof Error) {
-      logger.error(`Error in buyShares function: error=${error.message}`);
       return { error: error.message };
     }
     return { error: ERROR_MESSAGES.UNKNOWN_ERROR_OCC };
@@ -59,7 +58,6 @@ export const sellShares = async (userId: number, symbol: string, quantity: numbe
     return { message: SUCCESS_MESSAGES.SHARES_SOLD_SUCCESS};
   } catch (error) {
     if (error instanceof Error) {
-      logger.error(`Error in sellShares function: error=${error.message}`);
       return { error: error.message };
     }
     return { error: ERROR_MESSAGES.UNKNOWN_ERROR_OCC };

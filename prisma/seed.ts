@@ -1,4 +1,5 @@
-const { PrismaClient } = require('@prisma/client');
+import { PrismaClient } from '@prisma/client';
+
 const prisma = new PrismaClient();
 
 async function main() {
@@ -12,17 +13,17 @@ async function main() {
             shares: {
               create: [
                 {
-                  symbol: 'AAPL',
+                  symbol: 'APL',
                   price: 150.0,
                   quantity: Math.floor(Math.random() * 100) + 1,
                 },
                 {
-                  symbol: 'GOOGL',
+                  symbol: 'GGL',
                   price: 2800.0,
                   quantity: Math.floor(Math.random() * 100) + 1,
                 },
                 {
-                  symbol: 'AMZN',
+                  symbol: 'AMZ',
                   price: 3400.0,
                   quantity: Math.floor(Math.random() * 100) + 1,
                 },
@@ -38,10 +39,10 @@ async function main() {
 }
 
 main()
-  .catch((e) => {
+  .catch((e: Error) => {
     console.error(e);
     process.exit(1);
   })
   .finally(async () => {
     await prisma.$disconnect();
-});
+  });

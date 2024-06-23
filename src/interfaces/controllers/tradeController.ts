@@ -11,11 +11,6 @@ import { logger } from '@app/logger';
 export const buyShares = async (req: Request, res: Response) => {
   try {
     const { userId, symbol, quantity } = req.body;
-    // Check if userId, symbol, and quantity are provided
-    if (!userId || !symbol || !quantity) {
-      logger.error(ERROR_MESSAGES.INVALID_PARAMETERS);
-      return res.status(STATUS_CODES.BAD_REQUEST).json({ error: ERROR_MESSAGES.INVALID_PARAMETERS });
-    }
 
     const result = await tradeService.buyShares(userId, symbol, quantity);
     if (result.error) {
@@ -43,11 +38,6 @@ export const buyShares = async (req: Request, res: Response) => {
 export const sellShares = async (req: Request, res: Response) => {
   try {
     const { userId, symbol, quantity } = req.body;
-    // Check if userId, symbol, and quantity are provided
-    if (!userId || !symbol || !quantity) {
-      logger.error(ERROR_MESSAGES.INVALID_PARAMETERS);
-      return res.status(STATUS_CODES.BAD_REQUEST).json({ error: ERROR_MESSAGES.INVALID_PARAMETERS });
-    }
 
     const result = await tradeService.sellShares(userId, symbol, quantity);
     if (result.error) {

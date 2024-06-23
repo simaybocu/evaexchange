@@ -6,7 +6,6 @@ WORKDIR /tmp/app
 # Install dependencies
 COPY package.json package-lock.json ./
 RUN npm ci --silent
-RUN npm install -g prisma
 
 # Copy source
 COPY . .
@@ -26,6 +25,7 @@ COPY . .
 COPY --from=build /tmp/app/dist .
 
 # Generate database migrations
+RUN npm install -g prisma
 RUN npm run db:gen
 
 # Build and cleanup
@@ -33,4 +33,4 @@ ENV NODE_ENV=production
 RUN npm ci --omit=dev
 
 # Start server
-CMD ["npm", "run", "start"]
+CMD ["node", "./dist/src/index.js"]

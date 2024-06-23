@@ -1,5 +1,6 @@
 {
   "ts-node": {
+    "transpileOnly": true,
     "require": [
       "tsconfig-paths/register"
     ]
@@ -17,6 +18,8 @@
     "resolveJsonModule": true, // Allow importing JSON files as modules
     "sourceMap": true, // Generate source maps
     "removeComments": true, // Remove comments from output
+    "moduleResolution": "node",
+    "isolatedModules": true,
     "paths": {
       "@app/*": ["src/*"],
       "@domain/*": ["src/domain/*"],
@@ -26,5 +29,5 @@
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules"]
 }

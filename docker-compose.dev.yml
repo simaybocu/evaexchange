@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
+    environment:
+      DB_URL: postgresql://evaexchange:evaexchange@postgres:5432/evaexchange
     depends_on:
       - postgres
 

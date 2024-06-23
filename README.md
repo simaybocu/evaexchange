@@ -74,4 +74,4 @@ Starts the server in development mode with hot reloading.
 
 ## Start for Docker
 
-docker-compose -f docker-compose.dev.yml up --build -d
+`npm run dc:dev:up`

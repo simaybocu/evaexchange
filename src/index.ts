@@ -1,7 +1,6 @@
 import express from "express";
 import bodyParser from "body-parser";
 import tradeRoutes from "@interfaces/routes/tradeRoutes";
-import 'tsconfig-paths/register';
 import { logger } from './logger';
 
 const app = express();
